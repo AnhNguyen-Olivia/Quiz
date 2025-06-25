@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Development Quiz Learning Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="style.css">
+</head>   
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-microchip"></i> IoT Development Quiz Master</h1>
+            <p class="subtitle">Test your knowledge of IoT concepts, sensors, cloud integration, and more through interactive quizzes</p>
+        </header>
+        
+        <div class="dashboard">
+            <div class="quiz-list">
+                <h2><i class="fas fa-list"></i> Available Quizzes</h2>
+                <div id="quiz-menu"></div>
+            </div>
+            
+            <div class="quiz-content">
+                <div id="quiz-header">
+                    <div class="quiz-header">
+                        <h2 class="quiz-title">Select a quiz to begin</h2>
+                        <div class="progress-container">
+                            <i class="fas fa-tasks"></i>
+                            <span id="progress-text">0/0</span>
+                        </div>
+                    </div>
+                    <div class="empty-state">
+                        <i class="fas fa-book-open"></i>
+                        <p>Select a quiz from the list on the left to start testing your IoT knowledge. Track your progress and master each concept!</p>
+                    </div>
+                </div>
+                
+                <div id="quiz-interface" style="display: none;">
+                    <div class="question-container">
+                        <div class="question-text" id="question-text">Question text will appear here</div>
+                        <div class="options-container" id="options-container"></div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button class="btn btn-warning" id="prev-btn" disabled>
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button class="btn btn-primary" id="next-btn">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-success" id="submit-quiz" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Submit Quiz
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="result-container" id="result-container">
+                    <h2 class="result-title">Quiz Completed!</h2>
+                    <div class="score" id="score">0%</div>
+                    <p class="feedback" id="feedback">Well done! Keep learning to master IoT development.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-box">
+                            <div class="stat-value" id="correct-count">0</div>
+                            <div class="stat-label">Correct</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="total-questions">0</div>
+                            <div class="stat-label">Questions</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="percentage">0%</div>
+                            <div class="stat-label">Score</div>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation">
+                        <h3><i class="fas fa-lightbulb"></i> What to do next?</h3>
+                        <p>Review the questions you missed to strengthen your understanding. IoT development combines hardware, software, and cloud technologies - each concept builds on the last.</p>
+                        <p>Try another quiz to continue mastering IoT concepts!</p>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="restart-btn" style="margin-top: 30px;">
+                        <i class="fas fa-redo"></i> Try Another Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>IoT Development Quiz Learning Platform &copy; 2023 | Created for IoT Beginners</p>
+            <p>Study smarter with interactive quizzes and track your progress</p>
+        </footer>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>
