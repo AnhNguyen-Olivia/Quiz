@@ -2,6 +2,7 @@ let quizData = []; // Will be loaded from en.json
 
 // Fetch quiz data from en.json and initialize the app
 document.addEventListener('DOMContentLoaded', () => {
+    quizMenu.innerHTML = '<div style="text-align:center;padding:30px;">Loading quizzes...</div>';
     fetch('en.json')
         .then(response => response.json())
         .then(data => {
@@ -9,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
             init();
         })
         .catch(error => {
+            quizMenu.innerHTML = '<div style="color:red;">Failed to load quiz data.</div>';
             console.error('Failed to load quiz data:', error);
-            // Optionally show an error message to the user
         });
 });
 
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentQuestionIndex = 0;
         let userAnswers = [];
         let quizResults = [];
+        let lastSelectedOptions = []; // Add this near your state variables
         
         // DOM elements
         const quizMenu = document.getElementById('quiz-menu');
@@ -45,44 +47,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Render the quiz menu
+        let quizIdMap = {};
         function renderQuizMenu() {
             const quizzes = quizData[0].quizzes;
-            quizMenu.innerHTML = '';
-            
+            quizIdMap = {};
+            let html = '';
             quizzes.forEach((quiz, index) => {
-                const quizElement = document.createElement('div');
-                quizElement.className = 'quiz-item';
-                quizElement.dataset.id = quiz.id;
-                
-                // Check if user has taken this quiz before
+                quizIdMap[quiz.id] = quiz;
                 const quizResult = quizResults.find(r => r.quizId === quiz.id);
                 const status = quizResult ? 
                     `<span class="highlight">${quizResult.score}/${quiz.quiz.length}</span>` : 
                     '<span>Not started</span>';
-                
-                quizElement.innerHTML = `
-                    <h3>${quiz.title}</h3>
-                    <div class="quiz-info">
-                        <span><i class="fas fa-question-circle"></i> ${quiz.quiz.length} questions</span>
-                        <span>${status}</span>
+                html += `
+                    <div class="quiz-item" data-id="${quiz.id}">
+                        <h3>${quiz.title}</h3>
+                        <div class="quiz-info">
+                            <span><i class="fas fa-question-circle"></i> ${quiz.quiz.length} questions</span>
+                            <span>${status}</span>
+                        </div>
                     </div>
                 `;
-                
-                quizElement.addEventListener('click', () => startQuiz(quiz));
-                quizMenu.appendChild(quizElement);
+            });
+            quizMenu.innerHTML = html;
+            // Add event listeners after DOM update
+            quizMenu.querySelectorAll('.quiz-item').forEach(item => {
+                item.addEventListener('click', () => startQuiz(quizIdMap[item.dataset.id]));
             });
         }
         
         // Set up event listeners
         function setupEventListeners() {
-            prevBtn.addEventListener('click', showPreviousQuestion);
-            nextBtn.addEventListener('click', showNextQuestion);
-            submitQuizBtn.addEventListener('click', submitQuiz);
+            prevBtn.addEventListener('click', debounceButton(prevBtn, showPreviousQuestion));
+            nextBtn.addEventListener('click', debounceButton(nextBtn, showNextQuestion));
+            submitQuizBtn.addEventListener('click', debounceButton(submitQuizBtn, submitQuiz));
             restartBtn.addEventListener('click', resetQuiz);
-            
-            // Add event listener for review all answers
-            document.getElementById('review-all-btn').addEventListener('click', function () {
-                showAllAnswers();
+
+            // Toggle review all answers on click
+            const reviewBtn = document.getElementById('review-all-btn');
+            reviewBtn.addEventListener('click', function () {
+                const reviewContainer = document.getElementById('review-all-container');
+                if (reviewContainer.style.display === 'block') {
+                    reviewContainer.style.display = 'none';
+                    reviewBtn.innerHTML = '<i class="fas fa-eye"></i> Review All Answers';
+                } else {
+                    showAllAnswers();
+                    reviewBtn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Review';
+                }
             });
         }
         
@@ -91,14 +101,18 @@ document.addEventListener('DOMContentLoaded', () => {
             currentQuiz = quiz;
             currentQuestionIndex = 0;
             userAnswers = new Array(quiz.quiz.length).fill(null);
-            
+
+            // Hide previous results if visible
+            resultContainer.style.display = 'none'; // <-- Add this line
+
             // Update UI
             quizHeader.querySelector('.empty-state').style.display = 'none';
             quizInterface.style.display = 'block';
             document.querySelector('.quiz-title').textContent = quiz.title;
             updateProgress();
+
             renderQuestion();
-            
+
             // Highlight selected quiz
             document.querySelectorAll('.quiz-item').forEach(item => {
                 item.classList.remove('active');
@@ -112,39 +126,51 @@ document.addEventListener('DOMContentLoaded', () => {
         function renderQuestion() {
             const question = currentQuiz.quiz[currentQuestionIndex];
             questionText.textContent = question.questionText;
-            optionsContainer.innerHTML = '';
-            
-            question.answerOptions.forEach((option, index) => {
-                const optionElement = document.createElement('div');
-                optionElement.className = 'option';
-                if (userAnswers[currentQuestionIndex] === index) {
-                    optionElement.classList.add('selected');
-                }
-                
-                optionElement.innerHTML = `
-                    <div class="option-label">${String.fromCharCode(65 + index)}</div>
-                    <div class="option-text">${option.answerText}</div>
+
+            // Clone and shuffle the options for this render
+            let options = question.answerOptions.map((opt, idx) => ({ ...opt, origIndex: idx }));
+            shuffleArray(options);
+
+            let optionsHtml = '';
+            options.forEach((option, index) => {
+                // Find if this shuffled option is the user's selected answer
+                const selected = userAnswers[currentQuestionIndex] === option.origIndex ? 'selected' : '';
+                optionsHtml += `
+                    <div class="option ${selected}" data-index="${option.origIndex}">
+                        <div class="option-label">${String.fromCharCode(65 + index)}</div>
+                        <div class="option-text">${option.answerText}</div>
+                    </div>
                 `;
-                
-                optionElement.addEventListener('click', () => selectOption(index));
-                optionsContainer.appendChild(optionElement);
             });
-            
+            optionsContainer.innerHTML = optionsHtml;
+
+            // Use event delegation for option clicks
+            optionsContainer.onclick = function(e) {
+                const optionDiv = e.target.closest('.option');
+                if (!optionDiv) return;
+                const idx = Number(optionDiv.dataset.index);
+                selectOption(idx, optionDiv);
+            };
+
             // Update button states
             prevBtn.disabled = currentQuestionIndex === 0;
             nextBtn.style.display = currentQuestionIndex < currentQuiz.quiz.length - 1 ? 'block' : 'none';
             submitQuizBtn.style.display = currentQuestionIndex === currentQuiz.quiz.length - 1 ? 'block' : 'none';
         }
         
-        // Select an option
-        function selectOption(optionIndex) {
-            userAnswers[currentQuestionIndex] = optionIndex;
-            
-            // Update UI
-            const options = optionsContainer.querySelectorAll('.option');
-            options.forEach((option, index) => {
-                option.classList.toggle('selected', index === optionIndex);
-            });
+        // Select an option (optimized)
+        function selectOption(optionIndex, optionDiv) {
+            // Only update if the selection changed
+            if (userAnswers[currentQuestionIndex] !== optionIndex) {
+                // Deselect previous selection if any (use cache)
+                if (lastSelectedOptions[currentQuestionIndex] && lastSelectedOptions[currentQuestionIndex] !== optionDiv) {
+                    lastSelectedOptions[currentQuestionIndex].classList.remove('selected');
+                }
+                // Select the clicked option
+                optionDiv.classList.add('selected');
+                userAnswers[currentQuestionIndex] = optionIndex;
+                lastSelectedOptions[currentQuestionIndex] = optionDiv;
+            }
         }
         
         // Show next question
@@ -276,4 +302,32 @@ document.addEventListener('DOMContentLoaded', () => {
             quizHeader.querySelector('.empty-state').style.display = 'block';
             document.getElementById('review-all-container').style.display = 'none';
             renderQuizMenu();
+        }
+
+        function debounceButton(btn, fn, delay = 300) {
+            let timeout;
+            return function(...args) {
+                if (timeout) return;
+                btn.disabled = true;
+                fn(...args);
+                timeout = setTimeout(() => {
+                    btn.disabled = false;
+                    timeout = null;
+                }, delay);
+            };
+        }
+
+        quizMenu.addEventListener('click', function(e) {
+            const item = e.target.closest('.quiz-item');
+            if (item) {
+                const quiz = quizData[0].quizzes.find(q => q.id == item.dataset.id);
+                if (quiz) startQuiz(quiz);
+            }
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
         }
