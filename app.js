@@ -79,6 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.addEventListener('click', showNextQuestion);
             submitQuizBtn.addEventListener('click', submitQuiz);
             restartBtn.addEventListener('click', resetQuiz);
+            
+            // Add event listener for review all answers
+            document.getElementById('review-all-btn').addEventListener('click', function () {
+                showAllAnswers();
+            });
         }
         
         // Start a quiz
@@ -242,10 +247,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Reset the quiz
+        // Show all answers for review
+        function showAllAnswers() {
+            const reviewContainer = document.getElementById('review-all-container');
+            reviewContainer.innerHTML = '<h3>All Questions & Your Answers:</h3>';
+            currentQuiz.quiz.forEach((question, idx) => {
+                const userAnswerIdx = userAnswers[idx];
+                const correctOption = question.answerOptions.find(opt => opt.isCorrect === "true");
+                let userAnswerText = userAnswerIdx !== null ? question.answerOptions[userAnswerIdx].answerText : "<em>No answer</em>";
+                let isCorrect = userAnswerIdx !== null && question.answerOptions[userAnswerIdx].isCorrect === "true";
+                reviewContainer.innerHTML += `
+                    <div class="review-question ${isCorrect ? 'correct' : 'incorrect'}">
+                        <strong>Q${idx + 1}:</strong> ${question.questionText}<br>
+                        <span class="your-answer ${isCorrect ? 'correct-answer' : 'wrong-answer'}">
+                            Your answer: ${userAnswerText}
+                        </span><br>
+                        <span class="correct-answer">Correct answer: ${correctOption.answerText}</span>
+                    </div>
+                `;
+            });
+            reviewContainer.style.display = 'block';
+        }
+
+        // Hide review on reset
         function resetQuiz() {
             resultContainer.style.display = 'none';
             quizInterface.style.display = 'none';
             quizHeader.querySelector('.empty-state').style.display = 'block';
+            document.getElementById('review-all-container').style.display = 'none';
             renderQuizMenu();
         }

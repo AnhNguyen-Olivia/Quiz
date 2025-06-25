@@ -398,3 +398,31 @@
         .incorrect-question .your-answer {
             color: var(--danger);
         }
+        .review-all-container {
+            background: rgba(52, 152, 219, 0.08);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .review-question {
+            margin-bottom: 18px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: rgba(44, 62, 80, 0.08);
+        }
+        .review-question.correct {
+            border-left: 5px solid var(--success);
+        }
+        .review-question.incorrect {
+            border-left: 5px solid var(--danger);
+        }
+        .review-question .your-answer {
+            font-weight: bold;
+        }
+        .review-question .correct-answer {
+            color: var(--success);
+        }
+        .review-question .wrong-answer {
+            color: var(--danger);
+        }
