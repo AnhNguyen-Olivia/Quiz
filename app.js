@@ -197,12 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function showResults(correct, total, percentage) {
             quizInterface.style.display = 'none';
             resultContainer.style.display = 'block';
-            
+
             scoreElement.textContent = `${percentage}%`;
             correctCountElement.textContent = correct;
             totalQuestionsElement.textContent = total;
             percentageElement.textContent = `${percentage}%`;
-            
+
             if (percentage >= 80) {
                 feedbackElement.textContent = "Excellent work! You have a strong understanding of this IoT topic.";
                 feedbackElement.style.color = "#2ecc71";
@@ -212,6 +212,33 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 feedbackElement.textContent = "Keep studying! Review the material and try again to improve.";
                 feedbackElement.style.color = "#e74c3c";
+            }
+
+            // Show incorrect answers
+            const incorrectAnswersDiv = document.getElementById('incorrect-answers');
+            incorrectAnswersDiv.innerHTML = '';
+            let incorrectCount = 0;
+            currentQuiz.quiz.forEach((question, idx) => {
+                const userAnswerIdx = userAnswers[idx];
+                const correctOption = question.answerOptions.find(opt => opt.isCorrect === "true");
+                if (userAnswerIdx === null) return; // skipped
+                if (question.answerOptions[userAnswerIdx].isCorrect !== "true") {
+                    incorrectCount++;
+                    const userAnswerText = question.answerOptions[userAnswerIdx].answerText;
+                    incorrectAnswersDiv.innerHTML += `
+                        <div class="incorrect-question">
+                            <strong>Q${idx + 1}:</strong> ${question.questionText}<br>
+                            <span class="your-answer"><strong>Your answer:</strong> ${userAnswerText}</span><br>
+                            <span class="correct-answer"><strong>Correct answer:</strong> ${correctOption.answerText}</span>
+                        </div>
+                    `;
+                }
+            });
+            if (incorrectCount > 0) {
+                incorrectAnswersDiv.innerHTML = `<h3>Review Incorrect Answers:</h3>` + incorrectAnswersDiv.innerHTML;
+            }
+            else {
+                incorrectAnswersDiv.innerHTML = '';
             }
         }
         

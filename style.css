@@ -1,4 +1,4 @@
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -376,4 +376,25 @@
         
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent);
+        }
+        
+        .incorrect-answers {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .incorrect-answers h3 {
+            color: var(--danger);
+            margin-bottom: 10px;
+        }
+        .incorrect-question {
+            margin-bottom: 18px;
+            background: rgba(231, 76, 60, 0.08);
+            padding: 12px 18px;
+            border-radius: 8px;
+        }
+        .incorrect-question .correct-answer {
+            color: var(--success);
+        }
+        .incorrect-question .your-answer {
+            color: var(--danger);
         }
