@@ -152,6 +152,27 @@
 								"isCorrect": "true"
 							}
 						]
+					},
+					{
+						"questionText": "[Extra] What do sensors do in an IoT system?",
+						"answerOptions": [
+							{
+								"answerText": "Perform computations",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Connect to the cloud",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Sense physical conditions and convert to electrical signals",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Emit sound and light",
+								"isCorrect": "false"
+							}
+						]
 					}
 				]
 			},
@@ -203,6 +224,70 @@
 							{
 								"answerText": "False",
 								"isCorrect": "true"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Which of the following is NOT an example of an IoT device?:",
+						"answerOptions": [
+							{
+								"answerText": "Smart thermostat",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Fitness tracker",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Traditional mechanical clock",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Smart refrigerator",
+								"isCorrect": "false"
+							}
+
+						]
+					},
+					{
+						"questionText": "[Extra] What key feature makes a device part of the IoT ecosystem?",
+						"answerOptions": [
+							{
+								"answerText": "Having a display",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Being able to sense its environment and connect to the internet",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Being able to communicate with other household devices",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Using solar power",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Which of the following best represents a typical IoT architecture?",
+						"answerOptions": [
+							{
+								"answerText": "Sensor → Server → Database",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Sensor/Actuator → IoT Device → Cloud → App",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Cloud → IoT Device → Database",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "App → Cloud → IoT Device",
+								"isCorrect": "false"
 							}
 						]
 					}
@@ -307,6 +392,48 @@
 								"isCorrect": "false"
 							}
 						]
+					},
+					{
+						"questionText": "[Extra] A button is an example of:",
+						"answerOptions": [
+							{
+								"answerText": "Analog actuator",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Analog sensor",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Digital sensor",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Digital actuator",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] PWM is typically used to:",
+						"answerOptions": [
+							{
+								"answerText": "Convert analog signals to digital",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Simulate an analog signal using digital pulses",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Increase WiFi strength",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Convert light signals to voltage",
+								"isCorrect": "false"
+							}
+						]
 					}
 				]
 			},
@@ -394,6 +521,27 @@
 						]
 					},
 					{
+						"questionText": "[Extra] Which protocol is commonly used in IoT for lightweight messaging?",
+						"answerOptions": [
+							{
+								"answerText": "HTTPS",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "MQTT",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "DNS",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Wifi",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
 						"questionText": "MQTT, or Message Queueing Telemetry Transport, has message queues:",
 						"answerOptions": [
 							{
@@ -402,6 +550,69 @@
 							},
 							{
 								"answerText": "False",
+								"isCorrect": "true"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What does a retained message in MQTT do?",
+						"answerOptions": [
+							{
+								"answerText": "Deletes older messages",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Increases message size",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Stores the last message to a topic",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Encrypts the topic",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] MQTT works on which architecture?",
+						"answerOptions": [
+							{
+								"answerText": "Peer-to-peer",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Client-server",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Publish-subcribe",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Ring topology",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Which device connects all MQTT clients?",
+						"answerOptions": [
+							{
+								"answerText": "Gateway",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Controller",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Transmitter",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Broker",
 								"isCorrect": "true"
 							}
 						]
