@@ -2808,123 +2808,106 @@
 						]
 					},
 					{
-						"questionText": "[Extra] When an audio signal is broken into small chunks for speech recognition, which type of machine learning model is often used because it is good at remembering what came before?",
+						"questionText": "[Extra] What is 'Language understanding' (also called natural-language understanding) a part of?",
 						"answerOptions":[
 							{
-								"answerText": "Convolutional Neural Network (CNN)",
+								"answerText": "Text-to-speech synthesis",
 								"isCorrect": "false"
 							},
 							{
-								"answerText": "Recurrent Neural Network (RNN)",
+								"answerText": "Natural-language processing (NLP)",
 								"isCorrect": "true"
 							},
 							{
-								"answerText": "Support Vector Machine (SVM)",
+								"answerText": "Digital audio processing",
 								"isCorrect": "false"
 							}
 						]
 					},
 					{
-						"questionText": "[Extra] What kind of input do speech recognition models typically expect from audio chunks?",
+						"questionText": "[Extra] When referring to language understanding with computers, what is meant by 'understandin' in this context?",
 						"answerOptions":[
 							{
-								"answerText": "Audio chunks of varying sizes",
+								"answerText": "Achieving human-level comprehension, including sincerity and sarcasm",
 								"isCorrect": "false"
 							},
 							{
-								"answerText": "Audio chunks of the same size.",
+								"answerText": "Taking words and extracting key details from them",
 								"isCorrect": "true"
 							},
 							{
-								"answerText": "Full audio files without segmentation",
+								"answerText": "Automatically generating complex sentences",
 								"isCorrect": "false"
 							}
 						]
 					},
 					{
-						"questionText": "[Extra] How do 'smart models' in speech recognition handle homophones (words that sound the same but have different meanings), such as 'to,' 'two,' and 'too'?",
+						"questionText": "[Extra] In the context of language understanding models, what do 'Intents' represent?",
 						"answerOptions":[
 							{
-								"answerText": "They ask the user for clarification.",
+								"answerText": "The specific details or values that the user is referring to (e.g., '3 minutes').",
 								"isCorrect": "false"
 							},
 							{
-								"answerText": "They use context to pick the right word.",
+								"answerText": "The underlying purpose or goal of the user's words (e.g., 'set a timer')",
 								"isCorrect": "true"
 							},
 							{
-								"answerText": "They convert them into numerical representations.",
+								"answerText": "Pre-built categories like numbers or locations",
 								"isCorrect": "false"
 							}
 						]
 					},
 					{
-						"questionText": "[Extra] What kind of AI models are mentioned as being used by devices to detect wake words due to their fast, power-efficient, and low-memory requirements",
+						"questionText": "[Extra] What do 'Entities' represent in a language understanding model?",
 						"answerOptions":[
 							{
-								"answerText": "Large Language Models (LLMs)",
+								"answerText": "The overall action the user wants to perform",
 								"isCorrect": "false"
 							},
 							{
-								"answerText": "TinyML models",
+								"answerText": "The specific details or values that the intent is referring to (e.g., '3 minutes' or 'pineapple pizzas')",
 								"isCorrect": "true"
 							},
 							{
-								"answerText": "Supervised Learning Models",
+								"answerText": "The contextual meaning of a sentence",
 								"isCorrect": "false"
 							}
 						]
 					},
 					{
-						"questionText": "[Extra] What is a major privacy concern mentioned regarding smart devices that are always listening for a command?",
+						"questionText": "[Extra] What are the 'example sentences' provided to train an intent in a language understanding model known as?",
 						"answerOptions":[
 							{
-								"answerText": "They might drain the battery too quickly.",
+								"answerText": "Entities",
 								"isCorrect": "false"
 							},
 							{
-								"answerText": "Everything you say at home might be sent to the cloud and turned into text. ",
+								"answerText": "Utterances",
 								"isCorrect": "true"
 							},
 							{
-								"answerText": "They might accidentally activate. ",
+								"answerText": "Synonyms",
 								"isCorrect": "false"
 							}
 						]						
 					},
 					{
-						"questionText": "[Extra] For the smart kitchen timer project, what alternative to training a wake word model is suggested to activate listening?",
+						"questionText": "[Extra] When setting up entities for a timer, which type of pre-built entity can be used for the number of minutes or seconds?",
 						"answerOptions":[
 							{
-								"answerText": "Voice commands only",
+								"answerText": "Time unit",
 								"isCorrect": "false"
 							},
 							{
-								"answerText": "Using a button",
+								"answerText": "Number",
 								"isCorrect": "true"
 							},
 							{
-								"answerText": "Gestures",
+								"answerText": "Text",
 								"isCorrect": "false"
 							}
 						]							
-					},
-					{
-						"questionText": "[Extra] What is a benefit of advanced devices that can convert voice to text 'right on the device' as opposed to sending it to the cloud?",
-						"answerOptions":[
-							{
-								"answerText": "It speeds up wake word detection.",
-								"isCorrect": "false"
-							},
-							{
-								"answerText": "It provides more privacy and works even when offline",
-								"isCorrect": "true"
-							},
-							{
-								"answerText": " It makes the device cheaper, less power",
-								"isCorrect": "false"
-							}
-						]	
 					}
 				]
 			},
@@ -3028,6 +3011,91 @@
 								"isCorrect": "false"
 							}
 						]
+					},
+					{
+						"questionText": "[Extra] Which of the following is NOT typically one of the three stages of text-to-speech systems?",
+						"answerOptions":[
+							{
+								"answerText": "Text analysis",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Speech recognition",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Linguistic analysis",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is the purpose of 'Text analysis' in a text-to-speech system? ",
+						"answerOptions":[
+							{
+								"answerText": "To break down words into phonemes",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "To convert numbers and other non-word text into spoken words based on context and locale",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "To produce audio from phonemes and to adjust the tone or duration of speech ",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What are 'phonemes' in the context of linguistic analysis?",
+						"answerOptions":[
+							{
+								"answerText": "The raw audio recordings of human speech",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Constituent sounds that words are broken down into",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "ML models used for waveform generation",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] How do modern wave-form generation systems typically produce more natural-sounding voices compared to older systems?",
+						"answerOptions":[
+							{
+								"answerText": "By using single audio recordings for each phoneme",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "By using Machine Learning models built with deep learning",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "By relying solely on linguistic analysis to determine pitch",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is SSML (Speech Synthesis Markup Language) primarily used for when sending a text-to-speech request?",
+						"answerOptions":[
+							{
+								"answerText": "To define the specific REST endpoint for the request",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "To define not only the text, but also language, voice, speed, volume, and pitch",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "To convert binary audio data into text",
+								"isCorrect": "false"
+							}
+						]						
 					}
 				]
 			},
@@ -3130,6 +3198,108 @@
 								"isCorrect": "true"
 							}
 						]
+					},
+										{
+						"questionText": "[Extra] What is 'Machine Translation (MT)' primarily characterized by in its early stages?",
+						"answerOptions":[
+							{
+								"answerText": "Relying on neural networks to translate entire sentences",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Substituting words and applying rules for phrases and idioms",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Supporting only one-way translation between languages",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is a 'language pair' in the context of translation tools?",
+						"answerOptions":[
+							{
+								"answerText": "Two languages that have completely different grammatical structures",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "The ability of a translator to translate between two specific languages, e.g., English to Spanish",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "A set of idioms that are shared between two languages",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Why are 'idioms' particularly challenging for traditional machine translation systems?",
+						"answerOptions":[
+							{
+								"answerText": "They use words that are difficult to substitute directly",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Their understood meaning is different from a direct interpretation of the words",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "They often involve names that should not be translated",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] How do 'Neural translations' typically differ from traditional machine translation models?",
+						"answerOptions":[
+							{
+								"answerText": "They rely on huge databases of phrases and idioms",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "They usually translate entire sentences using one AI model trained on human-translated data",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "They always produce symmetrical translations",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Which Cognitive Service is a dedicated translation service that can translate text and supports features like masking profanity and custom translations for specific words?",
+						"answerOptions":[
+							{
+								"answerText": "Cognitive Services Speech service",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Cognitive Services Translator service",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "LUIS (Language Understanding Intelligent Service",
+								"isCorrect": "false"
+							}
+						]						
+					},
+					{
+						"questionText": "[Extra] ccording to the sources, what is a 'downside to relying on machine translation' for supporting multiple languages in an application?",
+						"answerOptions":[
+							{
+								"answerText": "It increases the time to delivery of the application",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "The translation may not match the expression expected due to cultural differences",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "It prevents the application from providing full end-to-end support later",
+								"isCorrect": "false"
+							}
+						]							
 					}
 				]
 			}
