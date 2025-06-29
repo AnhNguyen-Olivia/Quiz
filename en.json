@@ -654,6 +654,27 @@
 						]
 					},
 					{
+						"questionText": "[Extra] Why is temperature important in farming?",
+						"answerOptions": [
+							{
+								"answerText": "It affects fertilizer absorption",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "It determines photosynthesis rate only",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "It affects water intake",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "It influences plant growth rates",
+								"isCorrect": "true"
+							}
+						]
+					},
+					{
 						"questionText": "Sensors are too expensive for farmers in developed nations to use:",
 						"answerOptions": [
 							{
@@ -715,6 +736,48 @@
 							},
 							{
 								"answerText": "((day min + plant base) / 2)",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] If Tmax = 16°C, Tmin = 12°C, and Tbase = 10°C, what is the GDD?",
+						"answerOptions": [
+							{
+								"answerText": "3",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "4",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "5",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "2",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Which data format is commonly used to send telemetry data?",
+						"answerOptions": [
+							{
+								"answerText": "HTML",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "JSON",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "XML",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "SQL",
 								"isCorrect": "false"
 							}
 						]
@@ -824,6 +887,90 @@
 								"isCorrect": "true"
 							}
 						]
+					},
+					{
+						"questionText": "[Extra] Which method does a resistive sensor use?",
+						"answerOptions": [
+							{
+								"answerText": "Capacitance difference",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Water density",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Electrical resistance between probes",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Voltage storage",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Which communication protocol uses addresses and a shared bus?",
+						"answerOptions": [
+							{
+								"answerText": "UART",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "SPI",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "I2C",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "GPIO",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is the standard baud rate for UART?",
+						"answerOptions": [
+							{
+								"answerText": "400 Kbps",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "9,600 Hz",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "9,600 bps",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "400 Hz",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is the standard baud rate for UART?",
+						"answerOptions": [
+							{
+								"answerText": "400 Kbps",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "9,600 Hz",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "9,600 bps",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "400 Hz",
+								"isCorrect": "false"
+							}
+						]
 					}
 				]
 			},
@@ -911,6 +1058,27 @@
 						]
 					},
 					{
+						"questionText": "[Extra] A relay is activated by:",
+						"answerOptions": [
+							{
+								"answerText": "A digital high/low signal",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "PWM",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Low soil moisture only",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "High frequency signals",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
 						"questionText": "Actuators should always respond instantly to sensor readings:",
 						"answerOptions": [
 							{
@@ -920,6 +1088,23 @@
 							{
 								"answerText": "False",
 								"isCorrect": "true"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What logic is used to water when soil moisture is above a desired threshold (e.g 60%)?",
+						"answerOptions": [
+							{
+								"answerText": "relay_on = false",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "relay_on = true",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "no change",
+								"isCorrect": "false"
 							}
 						]
 					}
@@ -938,6 +1123,27 @@
 							},
 							{
 								"answerText": "False",
+								"isCorrect": "true"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Why is a public MQTT broker not ideal for production?",
+						"answerOptions": [
+							{
+								"answerText": "Too expensive",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Do not use HTTPS",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Uses too many device resources",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Lacks security and performance",
 								"isCorrect": "true"
 							}
 						]
@@ -1017,6 +1223,27 @@
 							},
 							{
 								"answerText": "False",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is used to identify devides securely in the cloud?",
+						"answerOptions": [
+							{
+								"answerText": "MAC address",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "IP address",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Secret key",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Email",
 								"isCorrect": "false"
 							}
 						]
