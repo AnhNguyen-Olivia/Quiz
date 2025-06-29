@@ -39,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalQuestionsElement = document.getElementById('total-questions');
         const percentageElement = document.getElementById('percentage');
         const restartBtn = document.getElementById('restart-btn');
-        
+        const reviewContainer = document.getElementById('review-all-container');
+        const reviewBtn = document.getElementById('review-all-btn');
+
         // Initialize the application
         function init() {
             renderQuizMenu();
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Start a quiz
         function startQuiz(quiz) {
+            resetQuiz();
             currentQuiz = quiz;
             currentQuestionIndex = 0;
             userAnswers = new Array(quiz.quiz.length).fill(null);
@@ -222,6 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Show results
             showResults(correctCount, currentQuiz.quiz.length, score);
+            reviewContainer.style.display = 'none';
+            reviewBtn.innerHTML = '<i class="fas fa-eye"></i> Review All Answers';
         }
         
         // Show quiz results
