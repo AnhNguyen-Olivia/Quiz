@@ -2581,6 +2581,125 @@
 								"isCorrect": "true"
 							}
 						]
+					},
+					{
+						"questionText": "[Extra] What is the primary function of a microphone?",
+						"answerOptions":[
+							{
+								"answerText": "To create sound vibrations",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "To listen to sound and turn it into an electrical signal",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "To amplify an electrical signal",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Which type of microphone works like a tiny generator and does not require external power?",
+						"answerOptions":[
+							{
+								"answerText": "Ribbon Microphone",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Dynamic Microphone",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "MEMS Microphone",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is the common sample rate used by music streaming services?",
+						"answerOptions":[
+							{
+								"answerText": "8kHz",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "48kHz",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "96kHz",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] Why does uncompressed audio data take up a significant amount of space, even for short recordings?",
+						"answerOptions":[
+							{
+								"answerText": "Because it uses fewer channels",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Because many samples are taken per second, and each sample takes up bytes",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Because it is stored as an MP3 file",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] How is sound in the real world, which is analog, converted to digital for computer processing?",
+						"answerOptions":[
+							{
+								"answerText": "By directly storing the smooth wave",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "By using Pulse Code Modulation (PCM) to take rapid snapshots of the signal",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "By using Pulse Width Modulation (PWM)",
+								"isCorrect": "false"
+							}
+						]						
+					},
+					{
+						"questionText": "[Extra] MEMS Microphones are described as being built into a chip and are great for which types of devices?",
+						"answerOptions":[
+							{
+								"answerText": "Studio recording equipment",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Phones, wearables, and smart devices",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Large-scale public address systems",
+								"isCorrect": "false"
+							}
+						]							
+					},
+					{
+						"questionText": "[Extra] In digital audio, what does 'Bit Depth' refer to?",
+						"answerOptions":[
+							{
+								"answerText": "The number of samples taken per second",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "How accurate each sample is, determining the detail of the sound",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "The number of audio channels",
+								"isCorrect": "false"
+							}
+						]	
 					}
 				]
 			},
@@ -2687,6 +2806,125 @@
 								"isCorrect": "true"
 							}
 						]
+					},
+					{
+						"questionText": "[Extra] When an audio signal is broken into small chunks for speech recognition, which type of machine learning model is often used because it is good at remembering what came before?",
+						"answerOptions":[
+							{
+								"answerText": "Convolutional Neural Network (CNN)",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Recurrent Neural Network (RNN)",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Support Vector Machine (SVM)",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What kind of input do speech recognition models typically expect from audio chunks?",
+						"answerOptions":[
+							{
+								"answerText": "Audio chunks of varying sizes",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Audio chunks of the same size.",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Full audio files without segmentation",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] How do 'smart models' in speech recognition handle homophones (words that sound the same but have different meanings), such as 'to,' 'two,' and 'too'?",
+						"answerOptions":[
+							{
+								"answerText": "They ask the user for clarification.",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "They use context to pick the right word.",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "They convert them into numerical representations.",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What kind of AI models are mentioned as being used by devices to detect wake words due to their fast, power-efficient, and low-memory requirements",
+						"answerOptions":[
+							{
+								"answerText": "Large Language Models (LLMs)",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "TinyML models",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Supervised Learning Models",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is a major privacy concern mentioned regarding smart devices that are always listening for a command?",
+						"answerOptions":[
+							{
+								"answerText": "They might drain the battery too quickly.",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Everything you say at home might be sent to the cloud and turned into text. ",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "They might accidentally activate. ",
+								"isCorrect": "false"
+							}
+						]						
+					},
+					{
+						"questionText": "[Extra] For the smart kitchen timer project, what alternative to training a wake word model is suggested to activate listening?",
+						"answerOptions":[
+							{
+								"answerText": "Voice commands only",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Using a button",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Gestures",
+								"isCorrect": "false"
+							}
+						]							
+					},
+					{
+						"questionText": "[Extra] What is a benefit of advanced devices that can convert voice to text 'right on the device' as opposed to sending it to the cloud?",
+						"answerOptions":[
+							{
+								"answerText": "It speeds up wake word detection.",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "It provides more privacy and works even when offline",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": " It makes the device cheaper, less power",
+								"isCorrect": "false"
+							}
+						]	
 					}
 				]
 			},
@@ -2737,6 +2975,7 @@
 							}
 						]
 					}
+
 				]
 			},
 			{
