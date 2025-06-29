@@ -402,7 +402,7 @@
 							},
 							{
 								"answerText": "Analog sensor",
-								"isCorrect": "true"
+								"isCorrect": "false"
 							},
 							{
 								"answerText": "Digital sensor",
@@ -1345,6 +1345,48 @@
 								"isCorrect": "true"
 							}
 						]
+					},
+					{
+						"questionText": "[Extra] What is a serverless function trigger?",
+						"answerOptions": [
+							{
+								"answerText": "The result of the function",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "A delay timer",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "An event that causes the function to execute",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "A database",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra] What is the Event Hub-compatible endpoint used for?",
+						"answerOptions": [
+							{
+								"answerText": "Sending emails",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Reading telemetry messages",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Resetting sensors",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Turning off devices",
+								"isCorrect": "false"
+							}
+						]
 					}
 				]
 			},
@@ -1557,6 +1599,27 @@
 								"isCorrect": "false"
 							}
 						]
+					},
+					{
+						"questionText": "[Extra] What does the $GPGGA NMEA sentence represent?",
+						"answerOptions": [
+							{
+								"answerText": "Geofence data",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Time and fix data",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Device ID and checksum",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Wifi addresses",
+								"isCorrect": "false"
+							}
+						]
 					}
 				]
 			},
@@ -1656,6 +1719,27 @@
 							},
 							{
 								"answerText": "False",
+								"isCorrect": "false"
+							}
+						]
+					},
+					{
+						"questionText": "[Extra]  Which of the following Azure storage types is best for storing large binary files like images?",
+						"answerOptions": [
+							{
+								"answerText": "Table storage",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "Blob storage",
+								"isCorrect": "true"
+							},
+							{
+								"answerText": "Queue storage",
+								"isCorrect": "false"
+							},
+							{
+								"answerText": "File storage",
 								"isCorrect": "false"
 							}
 						]
